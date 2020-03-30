@@ -1,0 +1,49 @@
+.login-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.login-container section.form {
+    margin-right: 30px;
+    width: 100%;
+    max-width: 350px;
+}
+
+
+.login-container section.form form h1 {
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+
+.login-container section.form form a {
+    display: flex;
+    width: 65%;
+    margin-top: 17px;
+    font-size: 20px;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+    transition: opacity 0.2s;
+}
+
+.login-container section.form form a svg {
+    margin-right: 12px;
+}
+
+.login-container section.form form a:hover {
+    opacity: 0.8;
+}
+
+.imgUbuntu {
+    position: absolute;
+    bottom: 0px;
+}
+
+

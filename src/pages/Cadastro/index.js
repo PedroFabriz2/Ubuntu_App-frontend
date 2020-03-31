@@ -22,19 +22,18 @@ export default function Cadastro() {
                     </Link>
                 </section>
                 
-                
-                    <form>
-                        <input placeholder="Nome da ONG"/>
-                        <input placeholder="E-mail"/>
-                        <input placeholder="Whatsapp"/>
-                        <input placeholder="Instagram"/>
-                        <div className="group_input">
-                            <input placeholder="Cidade"/>
-                            <input placeholder="UF" style={{ width: 80 }}/>
-                        </div>
-                        <button className="button" type='submit'>Inscrever</button>
-                    </form>
-                
+                <form>
+                    <input placeholder="Nome da ONG"/>
+                    <input placeholder="E-mail"/>
+                    <input placeholder="Whatsapp"/>
+                    <input placeholder="Instagram"/>
+                    <div className="group_input">
+                        <input placeholder="Cidade"/>
+                        <input placeholder="UF" style={{ width: 80 }}/>
+                    </div>
+                    <button className="button" type='submit'>Inscrever</button>
+                </form>
+                                    
                 <div className="imgUbuntu">
                     <img src={LogoUbuntuImg} alt='UbuntuImg' width="120px" height="134px" />
                 </div>

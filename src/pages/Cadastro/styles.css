@@ -1,0 +1,91 @@
+.container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .content{
+    width: 100%;
+    padding: 70px;
+    background-color: #6f8d6f;
+    border-radius: 8px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container .content section.text {
+    margin-bottom: 150px;
+    margin-left: 50px;
+    font-weight: 500;
+}
+
+.container .content section.text img {
+    margin-bottom: 100px;
+
+}
+
+.container .content section.text h1 {
+    margin-bottom: 37px;
+    font-size: 35px;
+}
+
+.container .content section.text p {
+    max-width: 300px;
+    margin-left: 20px;
+    color: #D7F0E1;
+    font-size: 20px;
+}
+
+.container .content form {
+    margin-right: 30px;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 50px;
+}
+
+.container .content input {
+    margin-top: 8px;
+}
+
+.container .content form .group_input {
+    display: flex;
+}
+
+.container .content form .group_input input + input {
+    margin-left: 8px;
+}
+
+.container .content section.text a {
+    display: flex;
+    width: 55%;
+    margin-top: 40px;
+    font-size: 20px;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+    transition: opacity 0.2s;
+}
+
+.container .content section.text a svg {
+    margin-right: 8px;
+}
+
+.container .content section.text a:hover {
+    opacity: 0.8;
+}
+
+
+.imgUbuntu {
+    position: absolute;
+    bottom: 30px;
+}

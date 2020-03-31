@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
 import { FiLogIn } from 'react-icons/fi';
+import './styles.css';
 
 import LogoTreeImg from '../../assets/treeLogo.png';
 import LogoUbuntuImg from '../../assets/logoubuntu.png';
@@ -18,7 +18,7 @@ export default function Login() {
                         <input placeholder="Sua ID"/>
                         <button className="button" type='submit'>Entrar</button>
 
-                        <Link to="/cadastro">
+                        <Link className="link" to="/cadastro">
                             <FiLogIn size={24} color="#2A4B43"/>
                             Não tenho cadastro
                         </Link>

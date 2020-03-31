@@ -40,7 +40,7 @@ form input {
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 8px;
     display: inline-block;
     transition: filter 0.2s;
@@ -49,3 +49,4 @@ form input {
 .button:hover {
     filter: brightness(90%);
 }
+

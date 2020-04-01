@@ -1,0 +1,82 @@
+.profile-container {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 0 auto;
+
+}
+
+.profile-container header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-container header span{
+    font-size: 25px;
+    margin-left: 30px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.profile-container header .button{
+    width: 200px;
+    margin-left: auto;
+    text-decoration: none;
+    color: #2A4B43;
+    text-align: center;
+}
+
+.profile-container header button{
+    width: 58px;
+    height: 58px;
+    margin-top: 10px;
+    margin-left: 5px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #7EABA0;
+    transition: opacity 0.2s;
+}
+
+.profile-container header button:hover{
+    opacity: 0.8;
+}
+
+.profile-container h1 {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.profile-container ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 24px;
+    list-style: none;
+}
+
+.profile-container ul li {
+    background: #6f8d6f;
+    padding: 24px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.profile-container ul li button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: 0;
+    background-color: #6f8d6f;
+}
+
+.profile-container ul li strong {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.profile-container ul li p + strong {
+    margin-top: 32px;
+}
+
+
+
+

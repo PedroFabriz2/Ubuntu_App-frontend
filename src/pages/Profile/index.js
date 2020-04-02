@@ -1,23 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FiLogOut, FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 
-//#6f8d6f
+import api from '../../services/api';
+
 import LogoTreeImg from '../../assets/just_tree.png';
-//import LogoUbuntuImg from '../../assets/logoubuntu.png';
 
 
 export default function Profile() {
+    const [ incidents, setIncidents ] = useState([]);
+    const history = useHistory();
+    const ongName = localStorage.getItem('ongName');
+    const ongId = localStorage.getItem('ongId');
+
+    useEffect(()=>{
+        api.get('profile', {
+            headers: {
+                Authorization: ongId,
+            }
+        }).then(response=>{
+            setIncidents(response.data);
+        })
+    }, [ongId]);
+
+    async function handleDeleteIncident(id){
+        try{
+            await api.delete(`incidents/${id}`, {
+                headers: {
+                    Authorization: ongId,
+                }
+            });
+
+            setIncidents(incidents.filter( incident => incident.id !== id));
+        }catch (err){
+            alert('Erro! Não foi possível deletar o caso. Tente novamente!');
+        }
+    }
+
+    async function handleLogOut(){
+        localStorage.clear();
+
+        history.push('/');
+    }
+
+
+    //aqui o useEffect entra em açao a cada vez que a variavel ongId muda.
+    //a acao eh: dentro de 'profile' voce coloca o ongID no espaço do authorization do header
+    // e then... set the incidents with response.data(that is de data from the body)
+    
     return(
         <div className="profile-container">
             <header>
                 <img src={LogoTreeImg} alt='treeApp' width="150px" height="150px" />
-                <span>Olá, Ubuntu!</span>
+                <span>Olá, {ongName}!</span>
                 <Link className="button" to="/new">
                     Novo Caso
                 </Link>
-                <button type='button'>
+                <button onClick={handleLogOut} type='button'>
                     <FiLogOut size={30} color="#2A4B43" />
                 </button>
             </header>
@@ -25,58 +65,21 @@ export default function Profile() {
             <h1>Seus casos cadastrados</h1>
 
             <ul>
-                <li>
-                    <strong>Caso 1</strong>
-                    <p>Caso1</p>
+                {incidents.map(incident => (
+                    <li key={incident.id}>
+                    <strong>Caso:</strong>
+                    <p>{incident.title}</p>
                 
-                    <strong>Descrição</strong>
-                    <p>descrição1</p>
+                    <strong>Descrição:</strong>
+                    <p>{incident.description}</p>
                 
-                    <strong>Valor</strong>
-                    <p>R$120</p>
-                    <button type="button">
+                    <strong>Valor:</strong>
+                    <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</p>
+                    <button onClick={()=>{handleDeleteIncident(incident.id)}} type="button">
                         <FiTrash2 size={20} color="#000000" />
                     </button>
                 </li>
-                <li>
-                    <strong>Caso 1</strong>
-                    <p>Caso1</p>
-                
-                    <strong>Descrição</strong>
-                    <p>descrição1</p>
-                
-                    <strong>Valor</strong>
-                    <p>R$120</p>
-                    <button type="button">
-                        <FiTrash2 size={20} color="#000000" />
-                    </button>
-                </li>
-                <li>
-                    <strong>Caso 1</strong>
-                    <p>Caso1</p>
-                
-                    <strong>Descrição</strong>
-                    <p>descrição1</p>
-                
-                    <strong>Valor</strong>
-                    <p>R$120</p>
-                    <button type="button">
-                        <FiTrash2 size={20} color="#000000" />
-                    </button>
-                </li>
-                <li>
-                    <strong>Caso 1</strong>
-                    <p>Caso1</p>
-                
-                    <strong>Descrição</strong>
-                    <p>descrição1</p>
-                
-                    <strong>Valor</strong>
-                    <p>R$120</p>
-                    <button type="button">
-                        <FiTrash2 size={20} color="#000000" />
-                    </button>
-                </li>
+                ))}
             </ul>         
         </div>
     );

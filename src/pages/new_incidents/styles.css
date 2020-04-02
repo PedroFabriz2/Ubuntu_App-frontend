@@ -55,6 +55,7 @@
 .container .content input,
 .container .content textarea {
     margin-top: 8px;
+    text-align: justify;
 }
 
 

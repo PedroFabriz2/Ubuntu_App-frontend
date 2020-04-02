@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
-import new_In from './pages/new_incidents';
 import Profile from './pages/Profile';
+import newIncident from './pages/new_incidents';
 
 export default function Routes(){
     return(
@@ -12,7 +12,7 @@ export default function Routes(){
             <Switch>
                 <Route path="/" exact component={Login} />
                 <Route path="/cadastro" component={Cadastro} />
-                <Route path="/new" component={new_In} />
+                <Route path="/new" component={newIncident} />
                 <Route path="/profile" component={Profile} />
             </Switch>
         </BrowserRouter>

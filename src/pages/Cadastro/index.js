@@ -69,12 +69,12 @@ export default function Cadastro() {
                         onChange={e => setEmail(e.target.value)}
                     />
                     <input 
-                        placeholder="Whatsapp"
+                        placeholder="Whatsapp (incluir DDI e DDD)"
                         value={whatsapp}
                         onChange={e => setWhatsapp(e.target.value)}
                     />
                     <input 
-                        placeholder="Instagram"
+                        placeholder="Instagram (sem o @)"
                         value={insta}
                         onChange={e => setInsta(e.target.value)}
                     />

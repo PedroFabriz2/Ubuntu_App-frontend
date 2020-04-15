@@ -65,7 +65,7 @@ export default function NewIncident() {
                         onChange={e => setDescription(e.target.value)}
                     />
                     <input 
-                        placeholder="Valor em Reais"
+                        placeholder="Formas de ajudar"
                         value={value}
                         onChange={e => setValue(e.target.value)}
                     />

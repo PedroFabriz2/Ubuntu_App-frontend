@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://treeappubuntu.herokuapp.com',
+    baseURL: 'https://ubuntutree.herokuapp.com/',
 }) 
 
 export default api;

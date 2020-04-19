@@ -36,6 +36,7 @@ export default function NewIncident() {
 
         }catch(err){
             alert('Erro ao cadastrar novo caso. Tente novamente!');
+            process.exit(1);
         }
     }
     

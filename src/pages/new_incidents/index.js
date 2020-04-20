@@ -23,15 +23,15 @@ export default function NewIncident() {
             title,
             description,
             value,
-        }
+        };
 
         try{
-            await api.post('/incidents', data, {
+            await api.post('incidents', data, {
                 headers: {
                     Authorization: ongId,
                 }
                     
-            });
+            })
             history.push('/profile');
 
         } catch (err) {

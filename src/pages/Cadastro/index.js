@@ -14,6 +14,7 @@ export default function Cadastro() {
     const [ email, setEmail ] = useState('');
     const [ whatsapp, setWhatsapp ] = useState('');
     const [ insta, setInsta ] = useState('');
+    const [ picpay, setPicpay ] = useState('');
     const [ city, setCity ] = useState('');
     const [ uf, setUf ] = useState('');
 
@@ -27,6 +28,7 @@ export default function Cadastro() {
             email,
             whatsapp,
             insta,
+            picpay,
             city,
             uf,
         }
@@ -77,6 +79,11 @@ export default function Cadastro() {
                         placeholder="Instagram (sem o @)"
                         value={insta}
                         onChange={e => setInsta(e.target.value)}
+                    />
+                    <input 
+                        placeholder="picpay (sem o @)"
+                        value={picpay}
+                        onChange={e => setPicpay(e.target.value)}
                     />
                     <div className="group_input">
                         <input 

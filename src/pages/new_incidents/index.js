@@ -32,6 +32,7 @@ export default function NewIncident() {
                 }
                     
             })
+            alert('Caso Criado! Clique OK para seguir.');
             history.push('/profile');
 
         } catch (err) {

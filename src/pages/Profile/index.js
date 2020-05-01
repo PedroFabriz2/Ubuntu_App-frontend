@@ -39,8 +39,9 @@ export default function Profile() {
     }
 
     async function handleLogOut(){
+        
+        alert('Confirmando Logout? Todas as alterações até esse instante serão salvas :)')
         localStorage.clear();
-
         history.push('/');
     }
 

@@ -11,6 +11,7 @@ import LogoUbuntuImg from '../../assets/logoubuntu.png';
 
 export default function Cadastro() {
     const [ nome, setNome ] = useState('');
+    const [ IDCriada, setIDCriada ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ whatsapp, setWhatsapp ] = useState('');
     const [ insta, setInsta ] = useState('');
@@ -25,6 +26,7 @@ export default function Cadastro() {
 
         const data = {
             nome,
+            IDCriada,
             email,
             whatsapp,
             insta,
@@ -36,7 +38,7 @@ export default function Cadastro() {
         try {
             const response = await api.post('ongs', data);
 
-            alert(`Sucesso! Seu ID de acesso: ${response.data.id}`);
+            alert(`Sucesso! Seu ID de acesso: ${IDCriada} e seu ID de segurança: ${response.data.id}`);
 
             history.push('/');
         } catch (err) {
@@ -64,6 +66,11 @@ export default function Cadastro() {
                         placeholder="Nome da ONG"
                         value={nome}
                         onChange={e => setNome(e.target.value)}
+                    />
+                    <input 
+                        placeholder="ID de Acesso"
+                        value={IDCriada}
+                        onChange={e => setIDCriada(e.target.value)}
                     />
                     <input
                         placeholder="E-mail"

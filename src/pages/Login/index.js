@@ -10,20 +10,21 @@ import LogoUbuntuImg from '../../assets/logoubuntu.png';
 
 
 export default function Login() {
-    const [ id, setId ] = useState();
+    const [ IDCriada, setId ] = useState('');
     const history = useHistory();
 
     async function handleLogin(e){
         e.preventDefault();
 
         try{
-            const response = await api.post('session', { id });
+            const response = await api.post('session', { IDCriada });
             
-            localStorage.setItem('ongId', id);
+            localStorage.setItem('ongId', response.data.id);
             localStorage.setItem('ongName', response.data.nome);
+            alert('Login Confirmado, Clique OK para seguir.')
             history.push('/profile');
         }catch(err){
-            alert("Erro no login, ONG não encontrada");
+            alert(`Erro no login, ONG não encontrada: ${err}`);
         }
     }
 
@@ -36,7 +37,7 @@ export default function Login() {
 
                         <input 
                             placeholder="Sua ID"
-                            value={id}
+                            value={IDCriada}
                             onChange={e => setId(e.target.value)}
                         />
                         <button className="button" type='submit'>Entrar</button>

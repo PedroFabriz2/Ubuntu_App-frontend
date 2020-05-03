@@ -18,12 +18,17 @@
     margin-top: 20px;
 }
 
-.profile-container header .button{
+.profile-container header .button,
+.profile-container .deleteaccount .button{
     width: 200px;
     margin-left: auto;
     text-decoration: none;
     color: #2A4B43;
     text-align: center;
+}
+
+.profile-container .deleteaccount .button{
+    margin-top: 110px;
 }
 
 .profile-container header button{

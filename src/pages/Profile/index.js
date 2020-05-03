@@ -38,6 +38,22 @@ export default function Profile() {
         }
     }
 
+    async function handleDeleteAccount(){
+        
+        try{
+            await api.delete('ongs/delete', {
+                headers: {
+                    Authorization: ongId,
+                }
+            });
+            
+            history.push('/');
+
+        }catch (err){
+            alert('Erro! Não foi possível deletar o Ong. Tente novamente!');
+        }
+    }
+
     async function handleLogOut(){
         
         alert('Confirmando Logout? Todas as alterações até esse instante serão salvas :)')
@@ -81,7 +97,13 @@ export default function Profile() {
                     </button>
                 </li>
                 ))}
-            </ul>         
+            </ul>   
+            <div className="deleteaccount">
+                <Link className="button" onClick={handleDeleteAccount}>
+                        Deletar Conta
+                </Link>
+            </div>
+            
         </div>
     );
 }
